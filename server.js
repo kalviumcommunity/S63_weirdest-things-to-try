@@ -1,11 +1,16 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+const express = require("express");
+const connectDB = require("./MongoDB");
 
-app.get('/ping', (req, res) => {
-  res.send('Pong');
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Connect to MongoDB
+connectDB();
+
+app.get("/", (req, res) => {
+    res.send("MongoDB Atlas is connected to VS Code!");
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
