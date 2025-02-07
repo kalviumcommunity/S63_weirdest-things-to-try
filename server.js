@@ -1,16 +1,24 @@
 const express = require("express");
-const connectDB = require("./MongoDB");
+const mongoose = require("mongoose");
+const connectDatabase = require("./MongoDB.js");
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+connectDatabase();
 
-// Connect to MongoDB
-connectDB();
-
-app.get("/", (req, res) => {
-    res.send("MongoDB Atlas is connected to VS Code!");
+app.get("/ping", (req, res) => {
+  try {
+    res.send("pong");
+  } catch (error) {
+    res.status(500).send("An error occurred");
+  }
 });
 
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
+// *Add Home Route with DB Status*
+app.get("/", (req, res) => {
+  const status = mongoose.connection.readyState === 1 ? "Connected" : "Not Connected";
+  res.json({ message: "Welcome to the API", db_status: status });
+});
+
+app.listen(5000, () => {
+  console.log(`Server is running on port http://localhost:5000`);
 });
