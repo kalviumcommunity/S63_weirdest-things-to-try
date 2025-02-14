@@ -13,7 +13,7 @@ const App = () => {
       {/* Content Section */}
       <div className="content">
         <h1 className="glowing-text">S63 WEIRDEST THINGS TO TRY</h1>
-        <p className="subtitle text-center">
+        <p className="subtitle">
           Step out of your comfort zone and explore the most bizarre and fun challenges ever!
         </p>
 
