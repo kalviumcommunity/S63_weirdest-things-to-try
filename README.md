@@ -5,7 +5,8 @@ deployed link : https://s63-weirdest-things-to-try.onrender.com
 # Weirdest Things to Try:
 
 Welcome to **Weirdest Things to Try**, a platform where you can explore the most bizarre, outlandish, and fun challenges! Whether you're looking to break free from the ordinary or simply have a laugh, this is the place to try activities that are as weird as they are enjoyable. From talking in rhymes for an hour to wearing a helmet for no reason, you’ll find an ever-growing list of strange challenges that will push your creativity and fun factor to new heights.
-
+## render deployed link:
+deployed link : https://s63-weirdest-things-to-try.onrender.com
 ## Project Overview
 ------------------------------------------
 The **Weirdest Things to Try** project is an interactive platform designed to engage users with a variety of weird and quirky challenges. It allows users to:
