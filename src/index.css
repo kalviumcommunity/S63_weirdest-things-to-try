@@ -3,8 +3,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(to right, #1e1e2f, #4b0082, #8a2be2);
-  color: white;
+  background: linear-gradient(to right, #121212, #1e1e2f, #3a0ca3);
+  color: #ddd;
   overflow-x: hidden;
   text-align: center;
 }
@@ -15,74 +15,126 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   text-align: center;
+  padding: 20px;
 }
 
-/* Neon Glowing Headings */
+/* Elegant Title Styling */
 .glowing-text {
-  font-size: 3.5rem;
-  font-weight: bold;
+  font-size: 2.8rem;
+  font-weight: 600;
   color: #ffcc00;
-  text-shadow: 0px 0px 15px rgba(255, 204, 0, 0.8), 
-               0px 0px 30px rgba(255, 204, 0, 0.5);
+  text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.6);
+  letter-spacing: 1.5px;
 }
 
 /* Subtitle */
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   max-width: 600px;
   margin-top: 10px;
   color: #ffeb3b;
+  font-weight: 400;
 }
 
-/* Glowing Button */
+/* Neon Button */
 .glowing-button {
   margin-top: 20px;
-  padding: 12px 30px;
-  font-size: 1.2rem;
-  font-weight: bold;
+  padding: 10px 25px;
+  font-size: 1rem;
+  font-weight: 500;
   border: none;
-  border-radius: 30px;
+  border-radius: 25px;
   background: linear-gradient(to right, #ffcc00, #ff5722);
   color: black;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0px 0px 15px rgba(255, 255, 0, 0.6);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.6);
 }
 
 .glowing-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 0px 25px rgba(255, 204, 0, 0.8);
+  transform: translateY(-3px);
+  box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.9);
 }
 
 /* Feature Cards */
 .feature-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
   margin-top: 40px;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 20px;
-  width: 250px;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 18px;
+  width: 220px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
   text-align: center;
-  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
-  transition: 0.3s ease-in-out;
+  box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 18px rgba(255, 255, 255, 0.2);
 }
 
 .card h3 {
   color: #ff9800;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Challenge Container */
+.challenge-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Challenge Card */
+.challenge-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 15px;
+  width: 250px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 3px 10px rgba(255, 255, 255, 0.1);
+  transition: 0.3s ease-in-out;
+}
+
+.challenge-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.2);
+}
+
+.challenge-card h2 {
+  color: #ffeb3b;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.challenge-card p {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin: 10px 0;
+}
+
+.difficulty {
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  color: #ffcc00;
 }
 
 /* Background Elements */
@@ -94,36 +146,36 @@ body {
 }
 
 .circle1 {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   background-color: #ff9800;
   border-radius: 50%;
   position: absolute;
   top: 10%;
-  left: 15%;
+  left: 10%;
   filter: blur(50px);
   animation: floating 4s infinite alternate ease-in-out;
 }
 
 .circle2 {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   background-color: #ff1493;
   border-radius: 50%;
   position: absolute;
   bottom: 10%;
-  right: 20%;
+  right: 15%;
   filter: blur(50px);
   animation: floating 5s infinite alternate ease-in-out;
 }
 
 .circle3 {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   background-color: #00e5ff;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   filter: blur(60px);
@@ -136,17 +188,24 @@ body {
     transform: translateY(0);
   }
   to {
-    transform: translateY(-20px);
+    transform: translateY(-15px);
   }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .feature-container {
+  .feature-container, .challenge-container {
     flex-direction: column;
     align-items: center;
   }
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Section Heading */
+.section-heading {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffeb3b;
+  text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.5);
+  margin-top: 60px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
