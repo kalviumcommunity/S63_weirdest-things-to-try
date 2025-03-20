@@ -1,12 +1,26 @@
 const express = require("express");
+const { body, validationResult } = require("express-validator");
 const router = express.Router();
 const Challenge = require("../models/schema"); // Import schema.js
 
+// Validation rules for challenge creation and update
+const validateChallenge = [
+    body("title").notEmpty().withMessage("Title is required"),
+    body("description").notEmpty().withMessage("Description is required"),
+    body("category").isIn(["funny", "extreme", "creative", "random", "food", "social"])
+        .withMessage("Invalid category"),
+];
+
 // Create a new challenge
-router.post("/challenges", async (req, res) => {
+router.post("/challenges", validateChallenge, async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ success: false, errors: errors.array() });
+    }
+
     try {
         console.log("Received Data:", req.body); // ✅ Check if frontend sends correct data
-        
+
         const newChallenge = new Challenge(req.body);
         await newChallenge.save();
 
@@ -16,7 +30,6 @@ router.post("/challenges", async (req, res) => {
         res.status(500).json({ success: false, message: "Error adding challenge", error });
     }
 });
-
 
 // Get all challenges
 router.get("/challenges", async (req, res) => {
@@ -44,7 +57,12 @@ router.get("/challenges/:id", async (req, res) => {
 });
 
 // Update a challenge by ID
-router.put("/challenges/:id", async (req, res) => {
+router.put("/challenges/:id", validateChallenge, async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ success: false, errors: errors.array() });
+    }
+
     try {
         const updatedChallenge = await Challenge.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (!updatedChallenge) {
